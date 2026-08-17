@@ -112,8 +112,8 @@ class _SessionIcon extends StatelessWidget {
       height: 44,
       decoration: BoxDecoration(
         color: isActive
-            ? AppColors.trackingActive.withOpacity(0.12)
-            : AppColors.primary.withOpacity(0.10),
+            ? AppColors.trackingActive.withValues(alpha: 0.12)
+            : AppColors.primary.withValues(alpha: 0.10),
         borderRadius: BorderRadius.circular(AppRadius.md),
       ),
       child: Icon(
@@ -131,7 +131,7 @@ class _ActiveBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
-        color: AppColors.trackingActive.withOpacity(0.15),
+        color: AppColors.trackingActive.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(AppRadius.full),
       ),
       child: Text(

@@ -21,16 +21,15 @@ class TrackingControlWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             if (state is TrackingRunning) _ActiveSessionCard(state: state),
-            if (state is TrackingRunning)
-              const SizedBox(height: AppSpacing.md),
+            if (state is TrackingRunning) const SizedBox(height: AppSpacing.md),
             _TrackingButton(state: state),
             if (state is TrackingError)
               Padding(
                 padding: const EdgeInsets.only(top: AppSpacing.sm),
                 child: Text(
                   state.message,
-                  style: AppTextStyles.bodySmall
-                      .copyWith(color: AppColors.error),
+                  style:
+                      AppTextStyles.bodySmall.copyWith(color: AppColors.error),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -74,10 +73,10 @@ class _ActiveSessionCardState extends State<_ActiveSessionCard> {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: AppColors.trackingActive.withOpacity(0.08),
+        color: AppColors.trackingActive.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(AppRadius.lg),
         border: Border.all(
-          color: AppColors.trackingActive.withOpacity(0.3),
+          color: AppColors.trackingActive.withValues(alpha: 0.3),
         ),
       ),
       child: Row(

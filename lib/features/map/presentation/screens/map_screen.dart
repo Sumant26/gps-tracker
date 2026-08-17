@@ -68,16 +68,13 @@ class _MapBody extends StatelessWidget {
           children: [
             const Icon(Icons.map_outlined, size: 64, color: AppColors.textHint),
             const SizedBox(height: AppSpacing.md),
-            Text('No locations to display.',
-                style: AppTextStyles.bodyMedium),
+            Text('No locations to display.', style: AppTextStyles.bodyMedium),
           ],
         ),
       );
     }
 
-    final latLngs = points
-        .map((p) => LatLng(p.latitude, p.longitude))
-        .toList();
+    final latLngs = points.map((p) => LatLng(p.latitude, p.longitude)).toList();
 
     final center = _centroid(latLngs);
 
@@ -169,7 +166,7 @@ class _MapMarker extends StatelessWidget {
         border: Border.all(color: Colors.white, width: 2),
         boxShadow: [
           BoxShadow(
-            color: color.withOpacity(0.4),
+            color: color.withValues(alpha: 0.4),
             blurRadius: 6,
             offset: const Offset(0, 2),
           ),
